@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanh toán - GREEN CLOSET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2f7a43;
+      --mint: #d7ead1;
+      --ink: #101510;
+      --muted: #687267;
+      --line: #e6e6e0;
+      --cream: #fbf7ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .topbar {
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--green);
+      font-weight: 800;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav,
+    .checkout {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 900;
+    }
+    .back {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 16px;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      color: var(--green);
+      font-weight: 800;
+    }
+    .checkout {
+      padding: 42px 0 80px;
+    }
+    h1 {
+      margin: 0 0 24px;
+      color: var(--green);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(320px, .78fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .panel {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 18px 44px rgba(47, 122, 67, .09);
+    }
+    .panel h2 {
+      margin: 0 0 18px;
+      font-size: 22px;
+    }
+    .summary-item {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .summary-item img {
+      width: 86px;
+      height: 104px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #f3f3f3;
+    }
+    .summary-item h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+    .summary-item p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .total {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 18px;
+      color: var(--green);
+      font-size: 22px;
+      font-weight: 900;
+    }
+    .form {
+      display: grid;
+      gap: 14px;
+    }
+    .form input,
+    .form textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: 0;
+      font: inherit;
+    }
+    .pay-options {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 8px;
+      background: var(--cream);
+    }
+    .pay-options label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #394238;
+      font-weight: 700;
+    }
+    .btn {
+      min-height: 50px;
+      border: 0;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--green);
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .success {
+      display: none;
+      padding: 16px;
+      border-radius: 8px;
+      color: var(--green);
+      background: var(--mint);
+      font-weight: 900;
+      line-height: 1.6;
+    }
+    .success.show { display: block; }
+    .empty {
+      padding: 22px;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .zalo {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(135deg, #dfff76 0 46%, var(--green) 47% 100%);
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav { display: grid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">MIỄN PHÍ GIAO HÀNG NỘI THÀNH CHO ĐƠN TỪ 200K</div>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="index.html">GREEN CLOSET</a>
+      <a class="back" href="index.html">← Tiếp tục mua hàng</a>
+    </nav>
+  </header>
+
+  <main class="checkout">
+    <h1>Thanh toán đơn hàng</h1>
+    <div class="grid">
+      <section class="panel">
+        <h2>Thông tin khách hàng</h2>
+        <form class="form" id="checkoutForm">
+          <input required name="name" placeholder="Họ và tên" />
+          <input required name="phone" placeholder="Số điện thoại" />
+          <input required name="address" placeholder="Địa chỉ nhận hàng" />
+          <textarea name="note" rows="4" placeholder="Ghi chú đơn hàng"></textarea>
+          <div class="pay-options">
+            <label><input type="radio" name="payment" checked value="COD"> Thanh toán khi nhận hàng COD</label>
+            <label><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng</label>
+            <label><input type="radio" name="payment" value="zalo"> Liên hệ qua Zalo để xác nhận</label>
+          </div>
+          <button class="btn" type="submit">Xác nhận đặt hàng</button>
+          <div class="success" id="successMessage">Đặt hàng thành công! GREEN CLOSET sẽ liên hệ bạn qua Zalo/SĐT để xác nhận đơn.</div>
+        </form>
+      </section>
+
+      <aside class="panel">
+        <h2>Tóm tắt sản phẩm</h2>
+        <div id="summary"></div>
+      </aside>
+    </div>
+  </main>
+
+  <a class="zalo" href="https://zalo.me/0937638236" target="_blank" rel="noopener">Zalo<br>Hotline</a>
+
+  <script>
+    const money = value => `${Number(value).toLocaleString("vi-VN")}đ`;
+    const cartKey = "greenClosetCart";
+    let cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+    const summary = document.querySelector("#summary");
+    function imageMarkup(item) {
+      return `<img src="${item.imageUrl || item.fallbackImage}" alt="${item.name || "Sản phẩm"}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${item.fallbackImage || "assets/hero-green-closet.png"}'">`;
+    }
+    function renderSummary() {
+      if (!cart.length) {
+        summary.innerHTML = `<div class="empty">Giỏ hàng đang trống. Quay lại GREEN CLOSET để chọn sản phẩm nhé.</div>`;
+        return;
+      }
+      const total = cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1), 0);
+      summary.innerHTML = cart.map(item => `
+        <div class="summary-item">
+          ${imageMarkup(item)}
+          <div>
+            <h3>${item.name}</h3>
+            <p>Size: ${item.size} · Màu: ${item.color} · Số lượng: ${item.quantity}</p>
+            <strong>${money(Number(item.price || 0) * Number(item.quantity || 1))}</strong>
+          </div>
+        </div>
+      `).join("") + `<div class="total"><span>Tổng tiền</span><span>${money(total)}</span></div>`;
+    }
+    document.querySelector("#checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
+      document.querySelector("#successMessage").classList.add("show");
+      localStorage.removeItem(cartKey);
+      cart = [];
+      renderSummary();
+    });
+    renderSummary();
+  </script>
+</body>
+</html>

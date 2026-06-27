@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GREEN CLOSET - Tủ đồ 2 hand xanh</title>
+  <meta name="description" content="GREEN CLOSET chuyên quần áo second hand chất lượng, giá tốt, được chọn lọc kỹ càng. Liên hệ Zalo 0937638236." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2f6f3d;
+      --green-2: #5f9a62;
+      --mint: #d7ead1;
+      --mint-bright: #a9d8a6;
+      --cream: #fbf7ec;
+      --beige: #dbc39d;
+      --brown: #8d6640;
+      --ink: #090b08;
+      --muted: #747a72;
+      --line: #e6e6e0;
+      --blue: #2f7a3d;
+      --sale: #2f7a3d;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", Arial, sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .topbar {
+      height: 36px;
+      background: #4e6b50;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .bar-inner,
+    .main-nav,
+    .catalog,
+    .category-strip,
+    .product-layout,
+    .footer-inner {
+      width: min(1810px, calc(100% - 72px));
+      margin: 0 auto;
+    }
+    .bar-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .bar-left,
+    .bar-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+    }
+    .bar-inner a {
+      padding: 0 14px;
+      border-right: 1px solid rgba(255, 255, 255, 0.22);
+      opacity: 0.92;
+    }
+    .bar-inner a:first-child { padding-left: 0; }
+    .bar-inner a:last-child { border-right: 0; }
+    .flag {
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      margin: 0 6px 0 12px;
+      border-radius: 50%;
+      background: #e21b22;
+      color: #ffde00;
+      font-size: 13px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .main-nav {
+      height: 78px;
+      display: grid;
+      grid-template-columns: 220px 1fr 430px;
+      align-items: center;
+      gap: 22px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      font-weight: 900;
+      letter-spacing: 0;
+      color: var(--green);
+      font-size: 24px;
+      white-space: nowrap;
+    }
+    .brand span {
+      line-height: 1;
+    }
+    .nav-links {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(18px, 2.4vw, 42px);
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .nav-item {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+    .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+    }
+    .nav-item.active > a,
+    .nav-item:hover > a { color: var(--green); }
+    .nav-item:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: var(--green);
+    }
+    .sale-link {
+      color: var(--sale);
+      line-height: 0.9;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .sale-link small {
+      display: block;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 20px;
+    }
+    .search {
+      height: 60px;
+      min-width: 250px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px 0 24px;
+      border: 1px solid #d7d7d7;
+      border-radius: 999px;
+      color: #8a8f96;
+      background: #fff;
+    }
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      color: #555;
+      font-size: 15px;
+    }
+    .icon-btn {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      display: inline-grid;
+      place-items: center;
+      border: 0;
+      background: transparent;
+      color: #000;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      min-width: 19px;
+      height: 19px;
+      display: none;
+      place-items: center;
+      padding: 0 5px;
+      border-radius: 999px;
+      color: #fff;
+      background: #e11919;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .cart-badge.show { display: grid; }
+    .shipbar {
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--green);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .mega {
+      position: fixed;
+      left: 50%;
+      top: 114px;
+      z-index: 40;
+      width: min(1760px, calc(100vw - 96px));
+      transform: translateX(-50%) translateY(-10px);
+      display: grid;
+      grid-template-columns: 1fr 450px;
+      overflow: hidden;
+      border: 1px solid #e2e2e2;
+      border-radius: 0 0 8px 8px;
+      background: #fff;
+      box-shadow: 0 26px 70px rgba(0,0,0,.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .nav-item:hover .mega {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-columns {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 42px;
+      padding: 42px 52px;
+    }
+    .mega h3 {
+      margin: 0 0 18px;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .mega h3 span { color: var(--blue); margin-left: 12px; }
+    .mega a,
+    .mega p {
+      display: block;
+      margin: 0 0 14px;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .mega a.feature { color: var(--blue); font-weight: 800; }
+    .mega-side {
+      display: grid;
+      gap: 24px;
+      padding: 42px;
+      border-left: 1px solid #dcdcdc;
+    }
+    .promo-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      border-radius: 8px;
+      background: #ddd;
+    }
+    .promo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 210px;
+      object-fit: cover;
+    }
+    .promo-card span {
+      position: absolute;
+      left: 22px;
+      bottom: 20px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+      text-shadow: 0 2px 14px rgba(0,0,0,.45);
+    }
+
+    .hero-banner {
+      position: relative;
+      overflow: hidden;
+      height: 350px;
+      background: #174821;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      inset: -20% 13% -55% 8%;
+      border-radius: 55% 45% 0 0;
+      background: #2f7a3d;
+      transform: rotate(-4deg);
+    }
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      right: -6%;
+      top: 55px;
+      width: 29%;
+      height: 125%;
+      border-radius: 55% 0 0 55%;
+      background: #b9deb1;
+    }
+    .hero-art {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 48px));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #fff;
+    }
+    .hero-badge {
+      width: 116px;
+      height: 160px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #fff;
+      color: #111;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
+    }
+    .hero-badge span { color: var(--green); font-size: 48px; line-height: 1; }
+    .hero-art h1 {
+      margin: 0 0 12px;
+      font-size: clamp(38px, 4.8vw, 82px);
+      line-height: .94;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .hero-art p {
+      margin: 0;
+      max-width: 900px;
+      font-size: 18px;
+      line-height: 1.45;
+      opacity: .88;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: .9fr 1.4fr;
+      gap: 60px;
+      align-items: center;
+      width: min(1810px, calc(100% - 72px));
+      margin: 118px auto 90px;
+    }
+    .story h2 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 6.3vw, 88px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .story p {
+      margin: 0 0 26px;
+      color: var(--blue);
+      font-size: clamp(19px, 1.8vw, 28px);
+      font-weight: 600;
+    }
+    .story-photo {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: 28px 8px 28px 8px;
+      background: #f2f2f2;
+    }
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+    }
+    .story-photo::before {
+      content: "";
+      position: absolute;
+      left: -80px;
+      top: -90px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(47, 122, 61, .85);
+      mix-blend-mode: multiply;
+    }
+    .story-badge {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 88px;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--green);
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .category-strip {
+      width: 100%;
+      overflow: hidden;
+      padding-top: 18px;
+      text-align: center;
+    }
+    .category-strip h2 {
+      width: min(1810px, calc(100% - 72px));
+      margin: 0 auto 22px;
+      font-size: clamp(24px, 2.4vw, 36px);
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    .cat-grid {
+      width: max-content;
+      margin: 0 0 46px;
+      display: flex;
+      gap: 18px;
+      text-align: left;
+      animation: closetMarquee 34s linear infinite;
+    }
+    .cat-grid:hover { animation-play-state: paused; }
+    .cat-card {
+      display: block;
+      width: 220px;
+      flex: 0 0 220px;
+      font-size: 19px;
+      font-weight: 900;
+    }
+    .cat-thumb {
+      aspect-ratio: 1 / 1.28;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 15% 15%, #f79b80 0 28%, transparent 29%),
+        radial-gradient(circle at 95% 60%, #13207c 0 38%, transparent 39%),
+        var(--mint-bright);
+    }
+    .cat-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .25s ease;
+    }
+    .cat-card:hover img { transform: scale(1.05); }
+    @keyframes closetMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 9px)); }
+    }
+
+    .catalog {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .filter-btn {
+      min-height: 48px;
+      padding: 0 18px;
+      border: 2px solid var(--green);
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 900;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .filter-btn.is-hidden { color: #fff; background: var(--green); }
+    .sort {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #9a9a9a;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .sort select {
+      min-width: 160px;
+      height: 58px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      background: #f1f1f1;
+      color: #555;
+      font-size: 14px;
+      outline: 0;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 365px 1fr;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+    .sidebar {
+      position: sticky;
+      top: 116px;
+      align-self: start;
+      color: #999;
+    }
+    .result-count {
+      margin: 0 0 18px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 18px;
+    }
+    .filter-group {
+      padding: 0 0 28px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #efefef;
+    }
+    .filter-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      color: #aaa;
+      font-weight: 900;
+      font-size: 15px;
+    }
+    .check {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 14px 0;
+      color: #777;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .check input {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+    }
+    .radio {
+      width: 27px;
+      height: 27px;
+      border: 2px solid #9c9c9c;
+      border-radius: 50%;
+      background: #fff;
+      flex: 0 0 auto;
+    }
+    .check input:checked + .radio {
+      border-color: var(--green);
+      box-shadow: inset 0 0 0 6px #fff;
+      background: var(--green);
+    }
+    .check input:checked ~ span:last-child { color: var(--green); font-weight: 800; }
+    .color-options {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .color-check {
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      padding: 0;
+    }
+    .color-check .radio {
+      width: 38px;
+      height: 38px;
+      border: 2px solid #dedede;
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+    .color-check input:checked + .radio {
+      border-color: var(--green);
+      background: var(--filter-color);
+      box-shadow: inset 0 0 0 5px #fff, 0 0 0 2px var(--green);
+    }
+    .filter-options[hidden] { display: none; }
+    .filter-title { cursor: pointer; }
+    .product-layout.filters-hidden { grid-template-columns: 1fr; }
+    .product-layout.filters-hidden .sidebar { display: none; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 36px 16px;
+    }
+    .product-card {
+      position: relative;
+      min-width: 0;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .product-card.is-hidden { display: none; }
+    .product-media {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1.24;
+      border-radius: 8px;
+      background: #d8d8d8;
+      cursor: pointer;
+    }
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .25s ease;
+    }
+    .product-card:hover .product-media img { transform: scale(1.04); }
+    .seal {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 2;
+      width: 42px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: #fff;
+      color: var(--green);
+      font-weight: 900;
+      box-shadow: 0 5px 18px rgba(0,0,0,.12);
+    }
+    .voucher {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, var(--green) 0 82%, var(--mint-bright) 82% 100%);
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .voucher strong {
+      padding: 2px 12px;
+      border-radius: 999px;
+      color: var(--green);
+      background: #fff;
+    }
+    .swatches {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 10px;
+    }
+    .swatch {
+      width: 52px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid #e7e7e7;
+      box-shadow: inset 0 0 0 3px #fff;
+      cursor: pointer;
+    }
+    .swatch.active { border-color: var(--green); }
+    .product-card h3 {
+      margin: 0 0 9px;
+      min-height: 50px;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 900;
+    }
+    .discount {
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font-size: 14px;
+    }
+    .old {
+      color: #aaa;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+    .quick {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      z-index: 3;
+      width: min(270px, calc(100% - 34px));
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(51, 61, 120, .7);
+      color: #171717;
+      transform: translate(-50%, 12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      backdrop-filter: blur(6px);
+    }
+    .product-card:hover .quick {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+    .quick p {
+      margin: 0 0 12px;
+      color: #111;
+      text-align: center;
+      font-weight: 900;
+    }
+    .quick-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .quick-actions button {
+      min-height: 38px;
+      border: 0;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .quick-actions button:last-child {
+      color: #fff;
+      background: var(--green);
+    }
+    .size-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .size-grid span {
+      display: grid;
+      place-items: center;
+      height: 48px;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .size-grid span.is-selected { color: #fff; background: #111; }
+    .empty-state {
+      display: none;
+      padding: 46px;
+      border: 1px dashed #d8d8d8;
+      border-radius: 8px;
+      color: #777;
+      text-align: center;
+      font-weight: 800;
+      background: #fafafa;
+    }
+    .empty-state.is-visible { display: block; }
+    .size-grid span.disabled {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+
+    .app-view {
+      width: min(1810px, calc(100% - 72px));
+      margin: 42px auto 80px;
+    }
+    .app-view[hidden] { display: none; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.85fr) minmax(320px, 1fr);
+      gap: 46px;
+      align-items: start;
+    }
+    .detail-image {
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f3f6f1;
+      box-shadow: 0 18px 46px rgba(47, 122, 61, .12);
+    }
+    .detail-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1.15;
+      object-fit: cover;
+    }
+    .detail-info h1 {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: clamp(28px, 3.6vw, 48px);
+      line-height: 1.12;
+    }
+    .detail-desc {
+      color: #666;
+      line-height: 1.8;
+      margin: 16px 0 20px;
+    }
+    .detail-meta {
+      display: grid;
+      gap: 8px;
+      margin: 18px 0;
+      color: #555;
+    }
+    .choice-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 18px;
+    }
+    .choice {
+      min-width: 48px;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid #d8d8d8;
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .choice.active {
+      color: #fff;
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid #d8d8d8;
+      border-radius: 999px;
+    }
+    .qty-control button {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      background: #f4f4f4;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .qty-control input {
+      width: 58px;
+      height: 42px;
+      border: 0;
+      text-align: center;
+      outline: 0;
+      font-weight: 800;
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .action-btn {
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--green);
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .action-btn.primary {
+      color: #fff;
+      background: var(--green);
+    }
+    .cart-panel {
+      position: fixed;
+      inset: 0 0 0 auto;
+      z-index: 80;
+      width: min(460px, 100vw);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: #fff;
+      box-shadow: -18px 0 50px rgba(0,0,0,.18);
+      transform: translateX(105%);
+      transition: transform .22s ease;
+    }
+    .cart-panel.open { transform: translateX(0); }
+    .cart-head,
+    .cart-foot {
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .cart-foot {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+    }
+    .cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cart-head h2,
+    .checkout-view h1 {
+      margin: 0;
+      color: var(--green);
+    }
+    .cart-close {
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .cart-items {
+      overflow: auto;
+      padding: 16px 20px;
+    }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-item img {
+      width: 74px;
+      height: 88px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .cart-item h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .cart-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .cart-controls select,
+    .cart-controls input {
+      height: 34px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0 8px;
+    }
+    .cart-controls input { width: 56px; }
+    .remove-btn {
+      border: 0;
+      background: transparent;
+      color: #b13a2f;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(320px, .8fr);
+      gap: 34px;
+      align-items: start;
+    }
+    .checkout-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 16px 36px rgba(47, 122, 61, .08);
+    }
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .form-grid input,
+    .form-grid textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: 0;
+    }
+    .pay-options {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .success-message {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 8px;
+      background: var(--mint);
+      color: var(--green);
+      font-weight: 900;
+    }
+    .success-message.show { display: block; }
+
+    .footer {
+      background: #050505;
+      color: #fff;
+      padding: 58px 0 70px;
+    }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1.45fr;
+      gap: 44px;
+    }
+    .foot-grid h3 {
+      margin: 0 0 18px;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+    .foot-grid p,
+    .foot-grid a {
+      display: block;
+      margin: 0 0 13px;
+      color: #cfcfcf;
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    .foot-grid strong { color: #fff; }
+
+    .float-up,
+    .float-zalo {
+      position: fixed;
+      z-index: 45;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+    .float-up {
+      left: 28px;
+      bottom: 32px;
+      width: 62px;
+      height: 62px;
+      background: var(--green);
+      font-size: 34px;
+    }
+    .float-zalo {
+      right: 34px;
+      bottom: 32px;
+      width: 74px;
+      height: 74px;
+      background: linear-gradient(135deg, #dfff76 0 46%, var(--green) 47% 100%);
+      font-size: 14px;
+    }
+
+    @media (max-width: 1300px) {
+      .main-nav { grid-template-columns: 210px 1fr 360px; }
+      .nav-links { gap: 24px; font-size: 16px; }
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .story { grid-template-columns: 1fr; margin-top: 70px; }
+    }
+    @media (max-width: 980px) {
+      .bar-inner,
+      .main-nav,
+      .catalog,
+      .category-strip,
+      .product-layout,
+      .footer-inner,
+      .story {
+        width: min(100% - 28px, 1810px);
+      }
+      .topbar { display: none; }
+      .main-nav {
+        height: auto;
+        padding: 14px 0;
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+      .nav-tools { justify-content: stretch; }
+      .search { min-width: 0; }
+      .mega { display: none; }
+      .hero-banner { height: 300px; }
+      .story { margin: 48px auto; gap: 26px; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .foot-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .brand { font-size: 19px; }
+      .nav-tools { gap: 10px; }
+      .icon-btn { display: none; }
+      .shipbar { font-size: 13px; }
+      .hero-art { align-items: center; gap: 14px; }
+      .hero-badge { width: 76px; height: 110px; font-size: 12px; }
+      .hero-badge span { font-size: 34px; }
+      .hero-art h1 { font-size: 34px; }
+      .hero-art p { font-size: 15px; }
+      .story h2 { font-size: 38px; }
+      .story p { font-size: 20px; }
+      .cat-grid,
+      .products,
+      .foot-grid { grid-template-columns: 1fr; }
+      .detail-grid,
+      .checkout-grid { grid-template-columns: 1fr; }
+      .app-view { width: min(100% - 28px, 1810px); }
+      .catalog { display: grid; gap: 16px; }
+      .sort { justify-content: space-between; }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="topbar">
+    <div class="bar-inner">
+      <div class="bar-left">
+        <a href="#about">VỀ GREEN CLOSET</a>
+        <a href="#care">2HAND CARE</a>
+        <a href="#share">GREEN&SHARE</a>
+      </div>
+      <div class="bar-right">
+        <a href="#club">★ Greenclub</a>
+        <a href="#store">Cửa hàng</a>
+        <a href="#blog">Blog</a>
+        <a href="#lien-he">CSKH</a>
+        <a href="#login">Đăng nhập</a>
+        <span class="flag">★</span> VN⌄
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a class="brand" href="#top" aria-label="GREEN CLOSET">
+        <span>GREEN CLOSET</span>
+      </a>
+      <div class="nav-links">
+        <div class="nav-item active"><a href="#san-pham-moi">NEW</a></div>
+        <div class="nav-item">
+          <a href="#do-nam">NAM</a>
+          <div class="mega">
+            <div class="mega-columns">
+              <div>
+                <h3>Tất cả sản phẩm <span>→</span></h3>
+                <a class="feature" href="#san-pham-moi">Sản phẩm mới</a>
+                <a href="#san-pham-moi">Bán chạy nhất</a>
+                <a href="#do-nam">Khám phá đồ nam</a>
+                <a href="#lien-he">Cool set 2 hand</a>
+              </div>
+              <div>
+                <h3>Áo nam <span>→</span></h3>
+                <a href="#san-pham-moi">Tất cả</a>
+                <a href="#san-pham-moi">Áo sơ mi</a>
+                <a href="#san-pham-moi">Áo thun</a>
+                <a href="#san-pham-moi">Áo khoác</a>
+                <a href="#san-pham-moi">Sweater vintage</a>
+              </div>
+              <div>
+                <h3>Quần nam <span>→</span></h3>
+                <a href="#san-pham-moi">Quần jean</a>
+                <a href="#san-pham-moi">Quần kaki</a>
+                <a href="#san-pham-moi">Quần short</a>
+                <a href="#san-pham-moi">Quần dài</a>
+              </div>
+              <div>
+                <h3>Phụ kiện <span>→</span></h3>
+                <a href="#san-pham-moi">Túi tote</a>
+                <a href="#san-pham-moi">Nón vintage</a>
+                <a href="#san-pham-moi">Khăn bandana</a>
+              </div>
+            </div>
+            <div class="mega-side">
+              <a class="promo-card" href="#san-pham-moi"><img src="assets/hero-green-closet.png" alt="BST đồ second hand nam"><span>GREEN CLOSET NEW DROP</span></a>
+              <a class="promo-card" href="#lien-he"><img src="assets/ao-so-mi-vintage-nam.png" alt="Áo sơ mi nam second hand"><span>Áo sơ mi vintage nam</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#do-nu">NỮ</a>
+          <div class="mega">
+            <div class="mega-columns">
+              <div>
+                <h3>Tất cả sản phẩm <span>→</span></h3>
+                <a class="feature" href="#san-pham-moi">Sản phẩm mới</a>
+                <a href="#san-pham-moi">Bán chạy nhất</a>
+                <a href="#do-nu">Khám phá đồ nữ</a>
+                <a href="#lien-he">Mix đồ vintage</a>
+              </div>
+              <div>
+                <h3>Áo nữ <span>→</span></h3>
+                <a href="#san-pham-moi">Cardigan</a>
+                <a href="#san-pham-moi">Áo croptop</a>
+                <a href="#san-pham-moi">Áo sơ mi</a>
+                <a href="#san-pham-moi">Áo khoác</a>
+              </div>
+              <div>
+                <h3>Quần/Váy <span>→</span></h3>
+                <a href="#san-pham-moi">Chân váy jean</a>
+                <a href="#san-pham-moi">Quần dài</a>
+                <a href="#san-pham-moi">Váy - đầm</a>
+                <a href="#san-pham-moi">Quần short</a>
+              </div>
+              <div>
+                <h3>Khám phá</h3>
+                <a href="#lien-he">Hướng dẫn chọn size</a>
+                <a href="#care">Cách giữ đồ 2 hand</a>
+                <a href="#share">Green&Share</a>
+              </div>
+            </div>
+            <div class="mega-side">
+              <a class="promo-card" href="#san-pham-moi"><img src="assets/cardigan-nu.png" alt="Cardigan nữ second hand"><span>Cardigan pastel</span></a>
+              <a class="promo-card" href="#san-pham-moi"><img src="assets/chan-vay-jean-nu.png" alt="Chân váy jean second hand"><span>Chân váy jean nữ</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item"><a href="#story">2HAND</a></div>
+        <div class="nav-item"><a href="#lien-he">PHỤ KIỆN</a></div>
+        <div class="nav-item sale-link"><a href="#san-pham-moi"><small>-30%</small>SALE</a></div>
+      </div>
+      <div class="nav-tools">
+        <label class="search" aria-label="Tìm kiếm">
+          <input id="searchInput" type="search" placeholder="Tìm kiếm..." />
+          <span aria-hidden="true">⌕</span>
+        </label>
+        <a class="icon-btn" href="#login" aria-label="Tài khoản">♟</a>
+        <button class="icon-btn" id="cartIcon" type="button" aria-label="Giỏ hàng">🛒<span class="cart-badge" id="cartBadge">0</span></button>
+      </div>
+    </nav>
+    <div class="shipbar">MIỄN PHÍ GIAO HÀNG NỘI THÀNH CHO ĐƠN TỪ 200K</div>
+  </header>
+
+  <main>
+    <section class="hero-banner" aria-label="GREEN CLOSET banner">
+      <div class="hero-art">
+        <div class="hero-badge"><div><span>♻</span><br>2 HAND<br>SELECTED</div></div>
+        <div>
+          <h1>GREEN CLOSET<br>SECOND HAND COLLECTION</h1>
+          <p>Tủ đồ 2 hand xanh - đẹp, tiết kiệm và bền vững. Mỗi món được chọn lọc kỹ càng, sạch, sáng và dễ phối.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div>
+        <h2>ĐẸP HƠN,<br>MUA XANH HƠN</h2>
+        <p>This is how GREEN CLOSET refreshes second hand fashion</p>
+      </div>
+      <div class="story-photo">
+        <img src="assets/hero-green-closet.png" alt="Quần áo second hand treo trên giá trong ánh sáng tự nhiên" />
+        <div class="story-badge">♻</div>
+      </div>
+    </section>
+
+    <section class="category-strip" aria-labelledby="category-title">
+      <h2 id="category-title">GREEN CLOSET 2 HAND COLLECTION</h2>
+      <div class="cat-grid">
+        <a class="cat-card" id="do-nam" href="#san-pham-moi">
+          <div class="cat-thumb"><img src="assets/ao-so-mi-vintage-nam.png" alt="Đồ nam second hand"></div>
+          Áo Nam
+        </a>
+        <a class="cat-card" href="#san-pham-moi">
+          <div class="cat-thumb"><img src="assets/hero-green-closet.png" alt="Quần áo second hand"></div>
+          Quần Nam
+        </a>
+        <a class="cat-card" id="do-nu" href="#san-pham-moi">
+          <div class="cat-thumb"><img src="assets/cardigan-nu.png" alt="Áo nữ second hand"></div>
+          Áo Nữ
+        </a>
+        <a class="cat-card" href="#san-pham-moi">
+          <div class="cat-thumb"><img src="assets/chan-vay-jean-nu.png" alt="Váy quần nữ second hand"></div>
+          Váy/Quần Nữ
+        </a>
+        <a class="cat-card" href="#san-pham-moi" aria-hidden="true">
+          <div class="cat-thumb"><img src="assets/ao-so-mi-vintage-nam.png" alt=""></div>
+          Áo Nam
+        </a>
+        <a class="cat-card" href="#san-pham-moi" aria-hidden="true">
+          <div class="cat-thumb"><img src="assets/hero-green-closet.png" alt=""></div>
+          Quần Nam
+        </a>
+        <a class="cat-card" href="#san-pham-moi" aria-hidden="true">
+          <div class="cat-thumb"><img src="assets/cardigan-nu.png" alt=""></div>
+          Áo Nữ
+        </a>
+        <a class="cat-card" href="#san-pham-moi" aria-hidden="true">
+          <div class="cat-thumb"><img src="assets/chan-vay-jean-nu.png" alt=""></div>
+          Váy/Quần Nữ
+        </a>
+      </div>
+    </section>
+
+    <section class="catalog" id="san-pham-moi" aria-label="Bộ lọc sản phẩm">
+      <button class="filter-btn" id="toggleFilters" type="button">☷ Ẩn bộ lọc</button>
+      <div class="sort">
+        <span>PHÂN LOẠI</span>
+        <select id="sortSelect" aria-label="Sắp xếp sản phẩm">
+          <option value="default">Mặc định</option>
+          <option value="price-asc">Giá thấp đến cao</option>
+          <option value="price-desc">Giá cao đến thấp</option>
+          <option value="newest">Mới nhất</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="product-layout" id="productLayout">
+      <aside class="sidebar" aria-label="Bộ lọc">
+        <p class="result-count"><span id="resultCount">8</span> kết quả</p>
+        <div class="filter-group">
+          <div class="filter-title">Danh mục <span>⌃</span></div>
+          <div class="filter-options">
+            <label class="check"><input type="checkbox" name="category" value="set-quan-ao"><span class="radio"></span><span>Set quần áo</span></label>
+            <label class="check"><input type="checkbox" name="category" value="ao-2hand"><span class="radio"></span><span>Áo 2hand</span></label>
+            <label class="check"><input type="checkbox" name="category" value="quan"><span class="radio"></span><span>Quần</span></label>
+            <label class="check"><input type="checkbox" name="category" value="giay-dep"><span class="radio"></span><span>Giày dép</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Nhóm sản phẩm <span>⌃</span></div>
+          <div class="filter-options">
+            <label class="check"><input type="checkbox" name="group" value="vintage"><span class="radio"></span><span>Vintage</span></label>
+            <label class="check"><input type="checkbox" name="group" value="cardigan"><span class="radio"></span><span>Cardigan</span></label>
+            <label class="check"><input type="checkbox" name="group" value="denim"><span class="radio"></span><span>Denim</span></label>
+            <label class="check"><input type="checkbox" name="group" value="set"><span class="radio"></span><span>Set đồ</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Giới tính <span>⌃</span></div>
+          <div class="filter-options">
+            <label class="check"><input type="checkbox" name="gender" value="nam"><span class="radio"></span><span>Nam</span></label>
+            <label class="check"><input type="checkbox" name="gender" value="nu"><span class="radio"></span><span>Nữ</span></label>
+            <label class="check"><input type="checkbox" name="gender" value="unisex"><span class="radio"></span><span>Unisex</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Kích thước <span>⌃</span></div>
+          <div class="filter-options">
+            <label class="check"><input type="checkbox" name="size" value="m"><span class="radio"></span><span>M</span></label>
+            <label class="check"><input type="checkbox" name="size" value="l"><span class="radio"></span><span>L</span></label>
+            <label class="check"><input type="checkbox" name="size" value="xl"><span class="radio"></span><span>XL</span></label>
+            <label class="check"><input type="checkbox" name="size" value="freesize"><span class="radio"></span><span>Freesize</span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Màu sắc <span>⌃</span></div>
+          <div class="filter-options color-options" aria-label="Lọc theo màu sắc">
+            <label class="check color-check" title="Xanh"><input type="checkbox" name="color" value="xanh"><span class="radio" style="--filter-color:#5f9a62;background:#5f9a62"></span></label>
+            <label class="check color-check" title="Be"><input type="checkbox" name="color" value="be"><span class="radio" style="--filter-color:#dbc39d;background:#dbc39d"></span></label>
+            <label class="check color-check" title="Denim"><input type="checkbox" name="color" value="denim"><span class="radio" style="--filter-color:#2e6fa6;background:#2e6fa6"></span></label>
+            <label class="check color-check" title="Đen"><input type="checkbox" name="color" value="den"><span class="radio" style="--filter-color:#111;background:#111"></span></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Giá <span>⌃</span></div>
+          <div class="filter-options">
+            <label class="check"><input type="checkbox" name="price" value="under-100"><span class="radio"></span><span>Dưới 100K</span></label>
+            <label class="check"><input type="checkbox" name="price" value="100-200"><span class="radio"></span><span>100K - 200K</span></label>
+            <label class="check"><input type="checkbox" name="price" value="over-200"><span class="radio"></span><span>Trên 200K</span></label>
+          </div>
+        </div>
+      </aside>
+
+      <div class="products" id="productsGrid">
+        <div class="empty-state" id="emptyState">Không có sản phẩm phù hợp. Thử bỏ bớt bộ lọc hoặc tìm từ khóa khác nhé.</div>
+      </div>
+    </section>
+    <section class="app-view detail-view" id="productDetailView" hidden></section>
+    <section class="app-view checkout-view" id="checkoutView" hidden>
+      <h1>Thanh toán</h1>
+      <div class="checkout-grid">
+        <div class="checkout-card">
+          <h2>Thông tin khách hàng</h2>
+          <form class="form-grid" id="checkoutForm">
+            <input required name="name" placeholder="Họ và tên" />
+            <input required name="phone" placeholder="Số điện thoại" />
+            <input required name="address" placeholder="Địa chỉ nhận hàng" />
+            <textarea name="note" rows="4" placeholder="Ghi chú đơn hàng"></textarea>
+            <div class="pay-options">
+              <label><input type="radio" name="payment" checked value="COD"> Thanh toán khi nhận hàng COD</label>
+              <label><input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng</label>
+              <label><input type="radio" name="payment" value="zalo"> Liên hệ qua Zalo để xác nhận</label>
+            </div>
+            <button class="action-btn primary" type="submit">Xác nhận đặt hàng</button>
+            <div class="success-message" id="successMessage">Đặt hàng thành công! GREEN CLOSET sẽ liên hệ bạn qua Zalo/SĐT để xác nhận đơn.</div>
+          </form>
+        </div>
+        <div class="checkout-card">
+          <h2>Tóm tắt đơn hàng</h2>
+          <div id="checkoutSummary"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="foot-grid">
+        <div>
+          <h3>GREENCLUB</h3>
+          <a href="#top">Tài khoản GreenClub</a>
+          <a href="#top">Đăng kí thành viên</a>
+          <a href="#top">Ưu đãi & Đặc quyền</a>
+        </div>
+        <div>
+          <h3>CHÍNH SÁCH</h3>
+          <a href="#top">Chính sách đổi trả tại cửa hàng</a>
+          <a href="#top">Chính sách đổi trả online</a>
+          <a href="#top">Chính sách khuyến mãi</a>
+          <a href="#top">Chính sách bảo mật</a>
+        </div>
+        <div>
+          <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+          <a href="#lien-he">Trải nghiệm mua sắm 100% hài lòng</a>
+          <a href="#lien-he">Hỏi đáp - FAQs</a>
+          <a href="#lien-he">GREEN CLOSET 101</a>
+        </div>
+        <div>
+          <h3>VỀ GREEN CLOSET</h3>
+          <a href="#story">Câu chuyện tủ đồ xanh</a>
+          <a href="#san-pham-moi">Second hand nhưng vẫn xinh</a>
+          <a href="#lien-he">Mua sắm xanh</a>
+        </div>
+        <div>
+          <h3>ĐỊA CHỈ LIÊN HỆ</h3>
+          <p><strong>Zalo:</strong> 0937638236</p>
+          <p>Second hand nhưng vẫn xinh - mua sắm xanh cho phong cách riêng.</p>
+          <p>Liên hệ mua hàng qua Zalo để được tư vấn size, tình trạng và giữ món.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-up" href="#top" aria-label="Lên đầu trang">⌃</a>
+  <a class="float-zalo" href="https://zalo.me/0937638236" target="_blank" rel="noopener" aria-label="Chat Zalo">Zalo<br>Hotline</a>
+  <aside class="cart-panel" id="cartPanel" aria-label="Giỏ hàng">
+    <div class="cart-head">
+      <h2>Giỏ hàng</h2>
+      <button class="cart-close" id="closeCart" type="button">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-total"><span>Tổng tiền</span><span id="cartTotal">0đ</span></div>
+      <button class="action-btn primary" id="checkoutButton" type="button">Tiến hành thanh toán</button>
+    </div>
+  </aside>
+  <script>
+    const money = value => `${Number(value).toLocaleString("vi-VN")}đ`;
+    const fallbackImages = [
+      "assets/hero-green-closet.png",
+      "assets/ao-so-mi-vintage-nam.png",
+      "assets/cardigan-nu.png",
+      "assets/chan-vay-jean-nu.png"
+    ];
+    const productSeeds = [
+      ["set-do-vintage-xanh-la","Set đồ vintage xanh lá","set-quan-ao","unisex",220000,269000,"-18%","https://www.pinterest.com/pin/35747390787038900/",["Freesize","M","L"],["xanh","be"],"Hàng 2hand tuyển chọn, còn đẹp"],
+      ["set-ao-quan-basic-vintage","Set áo quần basic vintage","set-quan-ao","unisex",210000,260000,"-19%","https://www.pinterest.com/pin/642325965649069220/",["M","L"],["be","den"],"Còn đẹp 90%"],
+      ["set-nu-di-choi-nhe-nhang","Set nữ đi chơi nhẹ nhàng","set-quan-ao","nu",230000,290000,"-20%","https://www.pinterest.com/pin/1083678729112621218/",["S","M","L"],["be","xanh"],"Hàng tuyển chọn"],
+      ["set-vintage-phoi-lop","Set vintage phối lớp","set-quan-ao","unisex",250000,310000,"-19%","http://pinterest.com/pin/747316131953085882/",["Freesize"],["xanh","den"],"2hand đẹp"],
+      ["set-outfit-xanh-kem","Set outfit xanh kem","set-quan-ao","unisex",240000,300000,"-20%","https://www.pinterest.com/pin/1083678729114162393/",["M","L"],["xanh","be"],"Còn đẹp"],
+      ["set-do-nu-vintage","Set đồ nữ vintage","set-quan-ao","nu",225000,280000,"-20%","https://www.pinterest.com/pin/1131670212640857851/",["S","M"],["be"],"Hàng 2hand tuyển chọn"],
+      ["set-quan-ao-casual","Set quần áo casual","set-quan-ao","unisex",215000,270000,"-20%","https://www.pinterest.com/pin/1083678729115096140/",["M","L","XL"],["xanh","den"],"Còn tốt"],
+      ["set-basic-2hand","Set basic 2hand","set-quan-ao","unisex",199000,250000,"-20%","http://pinterest.com/pin/1083678729111645659/",["Freesize"],["be","den"],"Còn đẹp"],
+      ["set-outfit-vintage-nu","Set outfit vintage nữ","set-quan-ao","nu",235000,290000,"-19%","https://www.pinterest.com/pin/1083678729112620931/",["S","M","L"],["xanh","be"],"Hàng tuyển chọn"],
+      ["ao-khoac-cardigan-nu-freesize","Áo khoác cardigan nữ freesize","ao-2hand","nu",150000,175000,"-15%","https://www.pinterest.com/pin/4605986243022047360/",["Freesize"],["be","xanh"],"Còn đẹp 90%"],
+      ["ao-so-mi-vintage-nam","Áo sơ mi vintage nam","ao-2hand","nam",120000,160000,"-25%","https://www.pinterest.com/pin/4611545409520068672/",["M","L"],["xanh","be"],"Hàng 2hand đẹp"],
+      ["ao-len-vintage-nu","Áo len vintage nữ","ao-2hand","nu",135000,170000,"-20%","https://www.pinterest.com/pin/921900986248848927/",["Freesize"],["be","xanh"],"Còn tốt"],
+      ["ao-so-mi-hoa-tiet","Áo sơ mi họa tiết","ao-2hand","unisex",125000,165000,"-24%","https://www.pinterest.com/pin/1083678729116228619/",["M","L"],["xanh"],"2hand tuyển chọn"],
+      ["ao-khoac-nhe-vintage","Áo khoác nhẹ vintage","ao-2hand","unisex",155000,190000,"-18%","https://www.pinterest.com/pin/945193040561384385/",["M","L","XL"],["be","den"],"Còn đẹp"],
+      ["ao-thun-2hand-basic","Áo thun 2hand basic","ao-2hand","unisex",95000,120000,"-20%","https://www.pinterest.com/pin/1131599843863332977/",["S","M","L"],["den","xanh"],"Còn tốt"],
+      ["ao-vintage-nu-phoi-mau","Áo vintage nữ phối màu","ao-2hand","nu",145000,180000,"-19%","https://www.pinterest.com/pin/935693260089574904/",["Freesize"],["xanh","be"],"Hàng tuyển chọn"],
+      ["quan-jean-nu-basic","Quần jean nữ basic","quan","nu",130000,165000,"-21%","https://www.pinterest.com/pin/12314598972601023/",["S","M","L"],["denim"],"Còn đẹp"],
+      ["chan-vay-jean-nu","Chân váy jean nữ","quan","nu",95000,119000,"-20%","https://www.pinterest.com/pin/707628160244251098/",["S","M"],["denim"],"2hand đẹp"],
+      ["quan-short-vintage","Quần short vintage","quan","unisex",110000,140000,"-21%","https://www.pinterest.com/pin/961518589360665056/",["M","L"],["denim","be"],"Còn tốt"],
+      ["quan-dai-form-rong","Quần dài form rộng","quan","unisex",145000,180000,"-19%","https://www.pinterest.com/pin/1110348483102479100/",["M","L","XL"],["den","be"],"Hàng 2hand tuyển chọn"],
+      ["giay-sneaker-2hand","Giày sneaker 2hand","giay-dep","unisex",250000,320000,"-22%","https://www.pinterest.com/pin/1119355682390998190/",["37","38","39","40","41"],["den","be"],"Còn đẹp"],
+      ["dep-sandal-vintage","Dép sandal vintage","giay-dep","nu",160000,200000,"-20%","https://www.pinterest.com/pin/949133690214095335/",["36","37","38","39"],["be"],"Còn tốt"],
+      ["giay-basic-unisex","Giày basic unisex","giay-dep","unisex",230000,290000,"-21%","https://www.pinterest.com/pin/937874691152574583/",["38","39","40","41","42"],["den","xanh"],"2hand đẹp"],
+      ["dep-nu-casual","Dép nữ casual","giay-dep","nu",140000,180000,"-22%","https://www.pinterest.com/pin/1057501556223653288/",["36","37","38","39"],["be","xanh"],"Còn đẹp"],
+      ["giay-vintage-style","Giày vintage style","giay-dep","unisex",260000,330000,"-21%","https://www.pinterest.com/pin/725290715007536210/",["39","40","41","42"],["den","be"],"Hàng tuyển chọn"],
+      ["dep-giay-2hand-chon-loc","Dép/giày 2hand chọn lọc","giay-dep","unisex",180000,230000,"-22%","https://www.pinterest.com/pin/914160424367883494/",["37","38","39","40"],["xanh","be"],"Còn tốt"]
+    ];
+    const products = productSeeds.map((item, index) => ({
+      id: item[0],
+      name: item[1],
+      category: item[2],
+      gender: item[3],
+      price: item[4],
+      oldPrice: item[5],
+      discount: item[6],
+      imageUrl: item[7],
+      fallbackImage: fallbackImages[index % fallbackImages.length],
+      sizes: item[8],
+      colors: item[9],
+      condition: item[10],
+      description: `${item[1]} được GREEN CLOSET chọn lọc kỹ, phù hợp mua sắm xanh, tiết kiệm và dễ phối hằng ngày.`,
+      newOrder: productSeeds.length - index
+    }));
+
+    const productLayout = document.querySelector("#productLayout");
+    const productsGrid = document.querySelector("#productsGrid");
+    const resultCount = document.querySelector("#resultCount");
+    const emptyState = document.querySelector("#emptyState");
+    const searchInput = document.querySelector("#searchInput");
+    const sortSelect = document.querySelector("#sortSelect");
+    const toggleFilters = document.querySelector("#toggleFilters");
+    const filterInputs = Array.from(document.querySelectorAll(".sidebar input[type='checkbox']"));
+    const listingViews = Array.from(document.querySelectorAll(".hero-banner, .story, .category-strip, .catalog, .product-layout"));
+    const detailView = document.querySelector("#productDetailView");
+    const checkoutView = document.querySelector("#checkoutView");
+    const cartPanel = document.querySelector("#cartPanel");
+    const cartItems = document.querySelector("#cartItems");
+    const cartTotal = document.querySelector("#cartTotal");
+    const cartBadge = document.querySelector("#cartBadge");
+    const checkoutSummary = document.querySelector("#checkoutSummary");
+    let cart = JSON.parse(localStorage.getItem("greenClosetCart") || "[]");
+
+    function selectedValues(name) {
+      return filterInputs.filter(input => input.name === name && input.checked).map(input => input.value);
+    }
+    function productMatchesPrice(product, ranges) {
+      if (!ranges.length) return true;
+      return ranges.some(range => {
+        if (range === "under-100") return product.price < 100000;
+        if (range === "100-200") return product.price >= 100000 && product.price <= 200000;
+        if (range === "over-200") return product.price > 200000;
+        return true;
+      });
+    }
+    function productMatches(product) {
+      const query = searchInput.value.trim().toLowerCase();
+      const inSet = (values, current) => !values.length || values.includes(current);
+      return (!query || `${product.name} ${product.category} ${product.condition}`.toLowerCase().includes(query)) &&
+        inSet(selectedValues("category"), product.category) &&
+        inSet(selectedValues("gender"), product.gender) &&
+        (!selectedValues("size").length || selectedValues("size").some(size => product.sizes.map(s => s.toLowerCase()).includes(size))) &&
+        (!selectedValues("color").length || selectedValues("color").some(color => product.colors.includes(color))) &&
+        productMatchesPrice(product, selectedValues("price"));
+    }
+    function sortedProducts(items) {
+      const mode = sortSelect.value;
+      return [...items].sort((a, b) => {
+        if (mode === "price-asc") return a.price - b.price;
+        if (mode === "price-desc") return b.price - a.price;
+        return b.newOrder - a.newOrder;
+      });
+    }
+    function renderProducts() {
+      const visible = sortedProducts(products.filter(productMatches));
+      productsGrid.innerHTML = visible.map(product => `
+        <article class="product-card" data-id="${product.id}">
+          <div class="quick">
+            <p>Thêm nhanh vào giỏ hàng</p>
+            <div class="size-grid">${product.sizes.slice(0,6).map((size, index) => `<span class="${index === 0 ? "is-selected" : ""}" data-size="${size}">${size}</span>`).join("")}</div>
+            <div class="quick-actions">
+              <button type="button" data-action="cart">Thêm vào giỏ</button>
+              <button type="button" data-action="buy">Mua ngay</button>
+            </div>
+          </div>
+          <div class="product-media"><span class="seal">2H</span>${imageMarkup(product, product.name)}<div class="voucher">VOUCHER <strong>GIẢM 30K</strong></div></div>
+          <div class="swatches">${product.colors.map((color, i) => `<span class="swatch ${i === 0 ? "active" : ""}" style="background:${colorMap[color] || "#ddd"}"></span>`).join("")}</div>
+          <h3>${product.name}</h3>
+          <p class="detail-meta">${product.condition}</p>
+          <div class="price-row"><span>${money(product.price)}</span><span class="discount">${product.discount}</span><span class="old">${money(product.oldPrice)}</span></div>
+        </article>
+      `).join("") + `<div class="empty-state ${visible.length ? "" : "is-visible"}" id="emptyStateInline">Không có sản phẩm phù hợp. Thử bỏ bớt bộ lọc hoặc tìm từ khóa khác nhé.</div>`;
+      resultCount.textContent = visible.length;
+      productsGrid.querySelectorAll(".product-card").forEach(card => {
+        card.addEventListener("click", event => handleProductCardClick(event, card.dataset.id));
+      });
+    }
+    const colorMap = { xanh: "#5f9a62", be: "#dbc39d", denim: "#2e6fa6", den: "#111" };
+    function imageMarkup(product, alt) {
+      return `<img src="${product.imageUrl}" alt="${alt}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${product.fallbackImage}'">`;
+    }
+    function navigateProduct(id) {
+      location.hash = `#/product/${id}`;
+    }
+    function route() {
+      const hash = location.hash;
+      if (hash === "#/checkout") {
+        window.location.href = "checkout.html";
+        return;
+      }
+      const productId = hash.startsWith("#/product/") ? hash.replace("#/product/", "") : "";
+      const checkout = hash === "#/checkout";
+      listingViews.forEach(view => view.hidden = Boolean(productId || checkout));
+      detailView.hidden = !productId;
+      checkoutView.hidden = !checkout;
+      if (productId) renderDetail(productId);
+      if (checkout) renderCheckout();
+      if (!productId && !checkout) renderProducts();
+    }
+    function handleProductCardClick(event, productId) {
+      event.preventDefault();
+      const card = event.currentTarget;
+      const selected = event.target.closest(".size-grid span");
+      if (selected) {
+        event.stopPropagation();
+        card.querySelectorAll(".size-grid span").forEach(item => item.classList.remove("is-selected"));
+        selected.classList.add("is-selected");
+        return;
+      }
+      const product = products.find(item => item.id === productId);
+      const action = event.target.closest("[data-action]")?.dataset.action || "cart";
+      const size = card.querySelector(".size-grid .is-selected")?.dataset.size || product.sizes[0];
+      addToCart(productId, { size, color: product.colors[0], quantity: 1 });
+      if (action === "buy") window.location.href = "checkout.html";
+      else openCart();
+    }
+    function renderDetail(id) {
+      const product = products.find(item => item.id === id) || products[0];
+      detailView.innerHTML = `
+        <div class="detail-grid">
+          <div class="detail-image">${imageMarkup(product, product.name)}</div>
+          <div class="detail-info">
+            <a href="#san-pham-moi" class="action-btn">← Quay lại sản phẩm</a>
+            <h1>${product.name}</h1>
+            <div class="price-row"><span>${money(product.price)}</span><span class="discount">${product.discount}</span><span class="old">${money(product.oldPrice)}</span></div>
+            <p class="detail-desc">${product.description}</p>
+            <div class="detail-meta">
+              <span><strong>Tình trạng:</strong> ${product.condition} / hàng tuyển chọn</span>
+              <span><strong>Người bán:</strong> GREEN CLOSET</span>
+              <span><strong>Zalo đặt hàng:</strong> 0937638236</span>
+              <span><strong>Image URL:</strong> ${product.imageUrl}</span>
+            </div>
+            <h3>Chọn size</h3>
+            <div class="choice-row" id="detailSizes">${product.sizes.map((size, i) => `<button class="choice ${i === 0 ? "active" : ""}" data-size="${size}">${size}</button>`).join("")}</div>
+            <h3>Chọn màu</h3>
+            <div class="choice-row" id="detailColors">${product.colors.map((color, i) => `<button class="choice ${i === 0 ? "active" : ""}" data-color="${color}">${color}</button>`).join("")}</div>
+            <h3>Số lượng</h3>
+            <div class="qty-control"><button type="button" data-qty="-1">-</button><input id="detailQty" value="1" inputmode="numeric"><button type="button" data-qty="1">+</button></div>
+            <div class="action-row">
+              <button class="action-btn primary" id="addCartBtn">Thêm vào giỏ hàng</button>
+              <button class="action-btn primary" id="buyNowBtn">Đặt hàng ngay</button>
+              <a class="action-btn" href="https://zalo.me/0937638236" target="_blank" rel="noopener">Liên hệ Zalo</a>
+            </div>
+          </div>
+        </div>
+      `;
+      detailView.querySelectorAll(".choice-row").forEach(row => row.addEventListener("click", event => {
+        const button = event.target.closest(".choice");
+        if (!button) return;
+        row.querySelectorAll(".active").forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+      }));
+      detailView.querySelectorAll("[data-qty]").forEach(button => button.addEventListener("click", () => {
+        const input = detailView.querySelector("#detailQty");
+        input.value = Math.max(1, Number(input.value || 1) + Number(button.dataset.qty));
+      }));
+      detailView.querySelector("#addCartBtn").addEventListener("click", () => {
+        addToCart(product.id, getSelectedDetail());
+        openCart();
+      });
+      detailView.querySelector("#buyNowBtn").addEventListener("click", () => {
+        addToCart(product.id, getSelectedDetail());
+        window.location.href = "checkout.html";
+      });
+    }
+    function getSelectedDetail() {
+      return {
+        size: detailView.querySelector("#detailSizes .active").dataset.size,
+        color: detailView.querySelector("#detailColors .active").dataset.color,
+        quantity: Math.max(1, Number(detailView.querySelector("#detailQty").value || 1))
+      };
+    }
+    function addToCart(productId, options) {
+      const key = `${productId}-${options.size}-${options.color}`;
+      const existing = cart.find(item => item.key === key);
+      if (existing) existing.quantity += options.quantity;
+      else {
+        const product = products.find(item => item.id === productId);
+        cart.push({
+          key,
+          productId,
+          ...options,
+          name: product.name,
+          price: product.price,
+          imageUrl: product.imageUrl,
+          fallbackImage: product.fallbackImage,
+          sizes: product.sizes
+        });
+      }
+      saveCart();
+    }
+    function saveCart() {
+      localStorage.setItem("greenClosetCart", JSON.stringify(cart));
+      renderCart();
+    }
+    function renderCart() {
+      const itemCount = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+      cartBadge.textContent = itemCount;
+      cartBadge.classList.toggle("show", itemCount > 0);
+      cartItems.innerHTML = cart.length ? cart.map((item, index) => {
+        const product = products.find(entry => entry.id === item.productId) || item;
+        return `<div class="cart-item">
+          ${imageMarkup(product, product.name)}
+          <div>
+            <h3>${product.name}</h3>
+            <p>${money(product.price)} · ${item.color}</p>
+            <div class="cart-controls">
+              <select data-cart-size="${index}">${product.sizes.map(size => `<option ${size === item.size ? "selected" : ""}>${size}</option>`).join("")}</select>
+              <input data-cart-qty="${index}" type="number" min="1" value="${item.quantity}">
+              <button class="remove-btn" data-remove="${index}" type="button">Xóa</button>
+            </div>
+          </div>
+        </div>`;
+      }).join("") : "<p>Giỏ hàng đang trống.</p>";
+      cartTotal.textContent = money(cart.reduce((sum, item) => {
+        const product = products.find(product => product.id === item.productId) || item;
+        return sum + product.price * item.quantity;
+      }, 0));
+      cartItems.querySelectorAll("[data-remove]").forEach(button => button.addEventListener("click", () => {
+        cart.splice(Number(button.dataset.remove), 1);
+        saveCart();
+      }));
+      cartItems.querySelectorAll("[data-cart-qty]").forEach(input => input.addEventListener("change", () => {
+        cart[Number(input.dataset.cartQty)].quantity = Math.max(1, Number(input.value || 1));
+        saveCart();
+      }));
+      cartItems.querySelectorAll("[data-cart-size]").forEach(select => select.addEventListener("change", () => {
+        cart[Number(select.dataset.cartSize)].size = select.value;
+        saveCart();
+      }));
+      renderCheckout();
+    }
+    function openCart() { cartPanel.classList.add("open"); }
+    function closeCart() { cartPanel.classList.remove("open"); }
+    function renderCheckout() {
+      checkoutSummary.innerHTML = cart.length ? cart.map(item => {
+        const product = products.find(entry => entry.id === item.productId) || item;
+        return `<div class="cart-item">${imageMarkup(product, product.name)}<div><h3>${product.name}</h3><p>Size: ${item.size} · SL: ${item.quantity}</p><strong>${money(product.price * item.quantity)}</strong></div></div>`;
+      }).join("") + `<div class="cart-total"><span>Tổng</span><span>${cartTotal.textContent}</span></div>` : "<p>Chưa có sản phẩm trong giỏ hàng.</p>";
+    }
+    toggleFilters.addEventListener("click", () => {
+      const hidden = productLayout.classList.toggle("filters-hidden");
+      toggleFilters.classList.toggle("is-hidden", hidden);
+      toggleFilters.textContent = hidden ? "☰ Hiện bộ lọc" : "☷ Ẩn bộ lọc";
+    });
+    document.querySelectorAll(".filter-title").forEach(title => {
+      title.addEventListener("click", () => {
+        const options = title.parentElement.querySelector(".filter-options");
+        if (!options) return;
+        options.hidden = !options.hidden;
+        title.querySelector("span").textContent = options.hidden ? "⌄" : "⌃";
+      });
+    });
+    filterInputs.forEach(input => input.addEventListener("change", renderProducts));
+    searchInput.addEventListener("input", renderProducts);
+    sortSelect.addEventListener("change", renderProducts);
+    document.querySelector("#cartIcon").addEventListener("click", openCart);
+    document.querySelector("#closeCart").addEventListener("click", closeCart);
+    document.querySelector("#checkoutButton").addEventListener("click", () => {
+      closeCart();
+      window.location.href = "checkout.html";
+    });
+    document.querySelector("#checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
+      document.querySelector("#successMessage").classList.add("show");
+      cart = [];
+      saveCart();
+    });
+    window.addEventListener("hashchange", route);
+    renderCart();
+    route();
+  </script>
+</body>
+</html>
